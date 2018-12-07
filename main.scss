@@ -1,0 +1,87 @@
+$size: 300px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #e74c3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: $size;
+    height: $size;
+    // background-color: #fff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: relative;
+
+    &>div {
+        position: absolute;
+        
+        border: 2px solid #fff;
+        bottom: 50%;
+        transform-origin: 100% 100%;
+        transition: all 1s linear;
+        
+
+        &.hour {
+            border: 4px solid #fff;
+            height: calc(20% - 4px);
+            left: calc(50% - 4px);
+            // animation: rotate 43200s infinite linear;
+            
+            
+        }
+
+        &.minute {
+            border: 2px solid #fff;
+            height: calc(30% - 2px);
+            left: calc(50% - 2px);
+            // animation: rotate 360s infinite linear;
+        }
+
+        &.second {
+            border: 1px solid #fff;
+            height: calc(48% - 1px);
+            left: calc(50% - 1px);
+            // animation: rotate 60s infinite linear;
+            
+        }
+
+        
+    }
+    
+    .round {
+           height: 8px;
+           width: 8px; 
+           background-color: #fff;
+           position: absolute;
+           top: calc(50% - 4px);
+           left: calc(50% - 4px);
+           z-index: 2;
+           border-radius: 50%;
+    }
+
+}
+
+@keyframes rotate {
+    0% {
+        
+    }
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
